@@ -7,29 +7,45 @@
 body {
   background-color: black;
   color: white;
+  font-family: "Bodoni Moda", Arial, Helvetica, sans-serif;
 }
 
-.document_container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar_container {
-  padding: 0 5% 0 0;
-}
-
-.navbar ul {
+ul {
   list-style: none;
 }
 
-.navbar a {
+a {
   text-decoration: none;
   font-family: "Bodoni Moda", Arial, Helvetica, sans-serif;
   color: white;
   font-weight: 700;
+}
+
+a:hover {
+  color: #ffa6d6;
+}
+
+figcaption {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+.navbar_container {
+  padding: 0 5% 0 0;
+  position: relative;
+}
+
+.navbar {
+  position: fixed;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 15%;
+}
+
+/* .navbar ul {
+  list-style: none;
+} */
+
+.navbar a {
   font-size: 1.5rem;
   line-height: 3rem;
 }
@@ -37,12 +53,22 @@ body {
 a.previous,
 a.next {
   font-size: 2rem;
-  vertical-align: middle;
+}
+
+a.currentlink {
+  color: #89cff0;
+}
+
+.quote_foundation {
+  width: 50vw;
+  height: auto;
+  margin: auto;
 }
 
 .quote_container {
   width: 50vw;
-  height: auto;
+  height: 100vh;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,7 +81,6 @@ a.next {
 }
 
 .quotefigure figcaption {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   font-size: 0.7vw;
   padding: 1% 0;
 }
@@ -91,7 +116,7 @@ a.next {
   color: black;
   font-size: 1vw;
 
-  /* padding: 2% 0; */
+  
 }
 
 .prevnext_container {
@@ -108,16 +133,109 @@ a.next {
   text-decoration: none;
   color: black;
   font-size: 5vw;
-  vertical-align: 50%;
 }
 
-a.nav1 {
+/* fashion page */
+
+.fashion_container {
+  width: 50vw;
+  margin: auto;
+}
+
+.insta_container {
+  margin-top: 10%;
+  display: grid;
+  row-gap: 1.5vw;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(10, auto);
+  justify-items: center;
+}
+
+.profile_container {
+}
+
+.instaprofile {
+  width: 20vw;
+  justify-content: center;
+}
+
+img.instaprofileimage {
+  width: 20vw;
+  height: auto;
+  object-fit: cover;
+}
+
+.instaname {
+  text-align: center;
+}
+
+.instabio {
+  text-align: center;
+  line-height: 1.5rem;
+}
+
+.instalink {
+  font-style: italic;
+}
+
+figcaption.instaname {
+  font-family: "Bodoni Moda", Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
   color: #89cff0;
 }
 
-a:active,
-a:visited,
-a:link,
-a:hover {
-  background: none !important;
+.instalink_container {
+  text-align: center;
+}
+
+.profile1 {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.profile2 {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.profile3 {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+.profile4 {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+.profile5 {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+}
+
+.profile6 {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+
+.profile7 {
+  grid-column: 1 / 2;
+  grid-row: 6 / 7;
+}
+
+.profile8 {
+  grid-column: 2 / 3;
+  grid-row: 6 / 7;
+}
+
+.profile9 {
+  grid-column: 1 / 2;
+  grid-row: 7 / 9;
+}
+
+.profile10 {
+  grid-column: 2 / 3;
+  grid-row: 7 / 8;
 }

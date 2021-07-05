@@ -84,3 +84,5 @@ function previous() {
     window.onload = next;
     document.querySelector('.next').addEventListener('click', next);
     document.querySelector('.previous').addEventListener('click', previous);
+
+    
