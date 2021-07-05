@@ -1,4 +1,12 @@
-const quotes = [
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array
+  }
+
+const quotes = shuffleArray ([
     ['"I am transgender and this doesn\'t mean that I am unlovable."', "Lana Wachowski, HRC Visibility Award Acceptance Speech.",],
     ['"Love him and let him love you. Do you think anything else under heaven really matters?"', "James Baldwin, \'Giovanni\'s Room\', 1956."],
     ['"There isn\'t a trans moment… It\'s just a presence where there was an absence. We deserve so much more."', "Hari Nef, The New Yorker, 2016." ],
@@ -29,60 +37,66 @@ const quotes = [
     ['"Every gay and lesbian person who has been lucky enough to survive the turmoil of growing up is a survivor. Survivors always have an obligation to those who will face the same challenges."','Bob Paris, \'Straight from the Heart,\' 1995.'],
     ['"Never be bullied into silence. Never allow yourself to be made a victim. Accept no one\'s definition of your life; define yourself."','Harvey Fierstein.'],
     ['"The beauty of standing up for your rights is others see you standing and stand up as well."','Cassandra Duffy.']
-    ];
+    ]);
 
 let quoteCount = 0;
-let currentQuote = 0;
-let quotesServed = [];
+let cnt = 0;
 
+var requestAnimationFrame = window.requestAnimationFrame ||
+                            window.mozRequestAnimationFrame ||
+                            window.webkitRequestAnimationFrame ||
+                            window.msRequestAnimationFrame;
 
+function play(index) {
+    const [q, a] = quotes[index];
+    let elementHeading = document.getElementById('quoteheadingID');
+    let elementAuthor = document.getElementById('quoteauthorID');
+            
+    document.querySelector(".quoteheading").className = "quoteheading";
+    requestAnimationFrame(function(time) {
+        requestAnimationFrame(function(time) {
+            elementHeading.textContent = q;
+            document.querySelector(".quoteheading").className = "quoteheading fadein";
+        });
+    });
 
-function next() {
-    let nextQuote = 0;
-    let randomQuote = 0;
+    document.querySelector(".quoteauthor").className = "quoteauthor";
+    requestAnimationFrame(function(time) {
+        requestAnimationFrame(function(time) {
+            elementAuthor.textContent = a;
+            document.querySelector(".quoteauthor").className = "quoteauthor fadein";
+        });
+    });
 
-    if (quoteCount === quotesServed.length) {
-        do {
-        randomQuote = Math.floor(Math.random()*quotes.length);
-        } while (randomQuote === quotesServed[quoteCount-1])
+}
 
-        console.log("randomQuote "+randomQuote);
-        console.log('quoteCount'+quoteCount);
-        console.log("quotesServed"+quotesServed);
-
-        document.querySelector('.quoteheading').innerHTML = quotes[randomQuote][0];
-        document.querySelector('.quoteauthor').innerHTML = quotes[randomQuote][1];
-        quotesServed.push(randomQuote);
+function clickEvent(event) {
+    if (whichButton = event.target.classList.contains('next')|| event.type==='load') {
         quoteCount++;
-        console.log('Random ' +quotes[randomQuote][0]);
-        
-    } else {
-        if (quoteCount < quotes.length ) {
-            nextQuote = quotesServed[quoteCount];
-            document.querySelector('.quoteheading').innerHTML = quotes[nextQuote][0];
-            document.querySelector('.quoteauthor').innerHTML = quotes[nextQuote][1];
-            quoteCount++;
-            console.log('Next ' +quotes[nextQuote][0]);
-        } 
-    }
-   
-}
-
-function previous() {
-    let prevQuote = 0;
-    if (quoteCount > 1) {
+        if (quoteCount === quotes.length) quoteCount = 0;
+        clearInterval(cnt);
+        setTimeout(play(quoteCount),8000);
+    } else
+    if (whichButton = event.target.classList.contains('previous')) {
         quoteCount--;
-        prevQuote = quotesServed[quoteCount-1];
-        document.querySelector('.quoteheading').innerHTML = quotes[prevQuote][0];
-        document.querySelector('.quoteauthor').innerHTML = quotes[prevQuote][1];
-        console.log('Prev ' +quotes[prevQuote][0]);
+        if (quoteCount < 0) quoteCount=0;
+        clearInterval(cnt);
+        setTimeout(play(quoteCount),8000);
     }
 
-  
+    cnt = setInterval(getQuote, 8000);
 }
 
-    window.onload = next;
-    document.querySelector('.next').addEventListener('click', next);
-    document.querySelector('.previous').addEventListener('click', previous);
 
+function getQuote() {
+    if (quoteCount === quotes.length) quoteCount = 0;
+    play(quoteCount);
+    quoteCount++;
+    
+    document.querySelector('.next').addEventListener('click', clickEvent);
+    document.querySelector('.previous').addEventListener('click', clickEvent);
+}
+    document.onload = clickEvent;
+    cnt = setInterval(getQuote, 8000);
+    
     

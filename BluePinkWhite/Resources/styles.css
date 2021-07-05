@@ -115,8 +115,19 @@ a.currentlink {
   text-align: center;
   color: black;
   font-size: 1vw;
+}
 
-  
+.fadein {
+  animation: fadeIn linear 7s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .prevnext_container {
@@ -137,12 +148,12 @@ a.currentlink {
 
 /* fashion page */
 
-.fashion_container {
+.content_container {
   width: 50vw;
   margin: auto;
 }
 
-.insta_container {
+.grid_container {
   margin-top: 10%;
   display: grid;
   row-gap: 1.5vw;
@@ -151,10 +162,7 @@ a.currentlink {
   justify-items: center;
 }
 
-.profile_container {
-}
-
-.instaprofile {
+.profile {
   width: 20vw;
   justify-content: center;
 }
@@ -165,20 +173,21 @@ img.instaprofileimage {
   object-fit: cover;
 }
 
-.instaname {
+.profilename {
   text-align: center;
 }
 
-.instabio {
+.profilebio {
   text-align: center;
   line-height: 1.5rem;
 }
 
-.instalink {
+.profilelink {
   font-style: italic;
+  word-wrap: break-word;
 }
 
-figcaption.instaname {
+figcaption.profilename {
   font-family: "Bodoni Moda", Arial, Helvetica, sans-serif;
   color: white;
   font-weight: 700;
@@ -186,7 +195,7 @@ figcaption.instaname {
   color: #89cff0;
 }
 
-.instalink_container {
+.profilelink_container {
   text-align: center;
 }
 
@@ -238,4 +247,32 @@ figcaption.instaname {
 .profile10 {
   grid-column: 2 / 3;
   grid-row: 7 / 8;
+}
+
+/* influencers */
+
+.flex_container {
+  margin-top: 15%;
+  display: flex;
+  flex-direction: column;
+}
+
+.video_responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video_responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.youtubeprofile1 {
+  grid-column: 1 / -1;
+  grid-row: 3 / auto;
 }
