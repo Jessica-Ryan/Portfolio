@@ -167,7 +167,7 @@ a.currentlink {
   justify-content: center;
 }
 
-img.instaprofileimage {
+img.profileimage {
   width: 20vw;
   height: auto;
   object-fit: cover;
@@ -180,6 +180,7 @@ img.instaprofileimage {
 .profilebio {
   text-align: center;
   line-height: 1.5rem;
+  color: #ffa6d6;
 }
 
 .profilelink {
@@ -241,12 +242,52 @@ figcaption.profilename {
 
 .profile9 {
   grid-column: 1 / 2;
-  grid-row: 7 / 9;
+  grid-row: 7 / 8;
 }
 
 .profile10 {
   grid-column: 2 / 3;
   grid-row: 7 / 8;
+}
+
+.profile11 {
+  grid-column: 1 / 2;
+  grid-row: 9 / 10;
+}
+
+.profile12 {
+  grid-column: 2 / 3;
+  grid-row: 9 / 10;
+}
+
+.profile13 {
+  grid-column: 1 / 2;
+  grid-row: 10 / 11;
+}
+
+.profile14 {
+  grid-column: 2 / 3;
+  grid-row: 10 / 11;
+}
+
+.profile15 {
+  grid-column: 1 / 2;
+  grid-row: 11 / 12;
+}
+
+.profile16 {
+  grid-column: 2 / 3;
+  grid-row: 11 / 12;
+}
+
+.profile17 {
+  grid-column: 1 / 2;
+  grid-row: 12 / 13;
+}
+
+.profile18 {
+  grid-column: 2 / 3;
+  grid-row: 12 / 13;
 }
 
 /* influencers */
