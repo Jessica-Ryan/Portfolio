@@ -96,6 +96,18 @@ function getQuote() {
     document.querySelector('.next').addEventListener('click', clickEvent);
     document.querySelector('.previous').addEventListener('click', clickEvent);
 }
+
+function openNav() {
+    document.getElementById('open').style.display = "none";
+    document.getElementById('mobile_nav').style.width = "80vw";
+}
+
+function closeNav() {
+    document.getElementById('mobile_nav').style.width = '0';
+    document.getElementById('open').style.display = 'block';
+}
+
+
     document.onload = clickEvent;
     cnt = setInterval(getQuote, 8000);
     

@@ -12,6 +12,7 @@ body {
 
 ul {
   list-style: none;
+  overflow: hidden;
 }
 
 a {
@@ -21,93 +22,51 @@ a {
   font-weight: 700;
 }
 
-a:hover {
+ul > li:not(:first-child) > a:hover {
   color: #ffa6d6;
 }
 
-figcaption {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+#wrapper {
+  width: 70vw;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.navbar_container {
-  padding: 0 5% 0 0;
-  position: relative;
-}
-
-.navbar {
+.banner_container {
+  width: 70vw;
+  height: 10vw;
+  background-color: green;
+  top: 0;
   position: fixed;
-  top: 50%;
-  transform: translate(0, -50%);
-  left: 15%;
+  z-index: 1;
 }
 
-/* .navbar ul {
-  list-style: none;
-} */
-
-.navbar a {
-  font-size: 1.5rem;
-  line-height: 3rem;
-}
-
-a.previous,
-a.next {
-  font-size: 2rem;
-}
-
-a.currentlink {
-  color: #89cff0;
-}
-
-.quote_foundation {
-  width: 50vw;
-  height: auto;
-  margin: auto;
+.banner_image {
+  width: 100%;
+  height: 10vw;
+  object-fit: fill;
 }
 
 .quote_container {
-  width: 50vw;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.quotefigure img {
-  width: 50vw;
-  filter: blur(5px);
-}
-
-.quotefigure figcaption {
-  font-size: 0.7vw;
-  padding: 1% 0;
-}
-
-.attribute {
-  color: #89cff0;
-  text-decoration: none;
-  font-size: 0.7vw;
-}
-
-.quotetext_container {
   position: absolute;
-  width: 40vw;
-  height: auto;
+  width: 70vw;
+  height: 10vw;
+  top: 0;
   display: flex;
-  flex-direction: column;
-  align-content: center;
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 0;
 }
 
 .quoteheading {
   font-family: "Bodoni Moda", cursive;
   font-style: italic;
-  font-size: 2vw;
+  font-size: 1.5vw;
   color: black;
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 }
 
 .quoteauthor {
@@ -130,164 +89,178 @@ a.currentlink {
   }
 }
 
-.prevnext_container {
-  position: absolute;
-  width: 48vw;
-  height: auto;
+.navbar_container {
+  top: 10vw;
+  width: 70vw;
+  position: fixed;
+  background-color: black;
+  z-index: 1;
+}
+
+.navitem {
+  float: left;
+}
+
+.navitem,
+.navlink {
+  display: block;
+  font-size: 1.5vw;
+  line-height: 2.5vw;
+  text-align: center;
+  padding-right: 16px;
+}
+
+.previous,
+.next {
+  font-size: 2.5vw;
+}
+
+.previous {
+  padding-left: 10vw;
+}
+
+.flexbox_container {
+  width: 70vw;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-}
-
-.prevnext_container a {
-  text-decoration: none;
-  color: black;
-  font-size: 5vw;
-}
-
-/* fashion page */
-
-.content_container {
-  width: 50vw;
-  margin: auto;
 }
 
 .grid_container {
-  margin-top: 10%;
   display: grid;
-  row-gap: 1.5vw;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(10, auto);
+  grid-template-areas:
+    "heading heading heading"
+    "profile1 profile2 profile3"
+    "profile4 profile5 profile6"
+    "profile7 profile8 profile9"
+    "profile10 profile11 profile12"
+    "profile13 profile14 profile15"
+    "profile16 profile17 profile18";
   justify-items: center;
+  gap: 1.5vw;
+}
+
+.section_heading {
+  font-size: 1.5vw;
+  color: #89cff0;
 }
 
 .profile {
-  width: 20vw;
+  width: 22.3vw;
   justify-content: center;
 }
 
 img.profileimage {
-  width: 20vw;
-  height: auto;
+  /* width: 20vw; */
+  width: 100%;
+
   object-fit: cover;
 }
 
-.profilename {
-  text-align: center;
-}
-
 .profilebio {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 1vw;
   text-align: center;
-  line-height: 1.5rem;
   color: #ffa6d6;
 }
 
 .profilelink {
   font-style: italic;
   word-wrap: break-word;
+  font-size: 1vw;
 }
 
-figcaption.profilename {
-  font-family: "Bodoni Moda", Arial, Helvetica, sans-serif;
-  color: white;
+.profilelink:hover {
+  color: #ffa6d6;
+}
+
+.profilename {
   font-weight: 700;
-  font-size: 1.5rem;
   color: #89cff0;
+  text-align: center;
+  font-size: 1.5vw;
 }
 
 .profilelink_container {
   text-align: center;
 }
 
+.section_heading {
+  grid-area: heading;
+  justify-self: start;
+}
+
 .profile1 {
-  grid-column: 1 / 2;
-  grid-row: 3 / 4;
+  grid-area: profile1;
 }
 
 .profile2 {
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
+  grid-area: profile2;
 }
 
 .profile3 {
-  grid-column: 1 / 2;
-  grid-row: 4 / 5;
+  grid-area: profile3;
 }
 
 .profile4 {
-  grid-column: 2 / 3;
-  grid-row: 4 / 5;
+  grid-area: profile4;
 }
 
 .profile5 {
-  grid-column: 1 / 2;
-  grid-row: 5 / 6;
+  grid-area: profile5;
 }
 
 .profile6 {
-  grid-column: 2 / 3;
-  grid-row: 5 / 6;
+  grid-area: profile6;
 }
 
 .profile7 {
-  grid-column: 1 / 2;
-  grid-row: 6 / 7;
+  grid-area: profile7;
 }
 
 .profile8 {
-  grid-column: 2 / 3;
-  grid-row: 6 / 7;
+  grid-area: profile8;
 }
 
 .profile9 {
-  grid-column: 1 / 2;
-  grid-row: 7 / 8;
+  grid-area: profile9;
 }
 
 .profile10 {
-  grid-column: 2 / 3;
-  grid-row: 7 / 8;
+  grid-area: profile10;
 }
 
 .profile11 {
-  grid-column: 1 / 2;
-  grid-row: 9 / 10;
+  grid-area: profile11;
 }
 
 .profile12 {
-  grid-column: 2 / 3;
-  grid-row: 9 / 10;
+  grid-area: profile12;
 }
 
 .profile13 {
-  grid-column: 1 / 2;
-  grid-row: 10 / 11;
+  grid-area: profile13;
 }
 
 .profile14 {
-  grid-column: 2 / 3;
-  grid-row: 10 / 11;
+  grid-area: profile14;
 }
 
 .profile15 {
-  grid-column: 1 / 2;
-  grid-row: 11 / 12;
+  grid-area: profile15;
 }
 
 .profile16 {
-  grid-column: 2 / 3;
-  grid-row: 11 / 12;
+  grid-area: profile16;
 }
 
 .profile17 {
-  grid-column: 1 / 2;
-  grid-row: 12 / 13;
+  grid-area: profile17;
 }
 
 .profile18 {
-  grid-column: 2 / 3;
-  grid-row: 12 / 13;
+  grid-area: profile18;
 }
 
 /* influencers */
@@ -313,7 +286,207 @@ figcaption.profilename {
   position: absolute;
 }
 
-.youtubeprofile1 {
-  grid-column: 1 / -1;
-  grid-row: 3 / auto;
+/* Responsive design */
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  .banner_container {
+    display: none;
+  }
+
+  .fashion_section {
+    margin-top: 1vw;
+  }
+
+  .navbar_container {
+    top: 0;
+    position: fixed;
+  }
+
+  .profile {
+    width: 50vw;
+    justify-content: center;
+  }
+
+  .grid_container {
+    display: grid;
+    grid-template-areas:
+      "heading"
+      "profile1"
+      "profile2"
+      "profile3"
+      "profile4"
+      "profile5"
+      "profile6"
+      "profile7"
+      "profile8"
+      "profile9"
+      "profile10"
+      "profile11"
+      "profile12"
+      "profile13"
+      "profile14"
+      "profile15"
+      "profile16"
+      "profile17"
+      "profile18";
+    justify-items: center;
+    gap: 1.5vw;
+  }
+
+  .open {
+    top: 0;
+    color: white;
+    font-size: 3rem;
+    float: left;
+    display: block;
+    cursor: pointer;
+  }
+
+  .mobile_nav {
+    width: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    z-index: 1;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.9);
+    transition: 0.5s;
+    display: block;
+  }
+
+  .mobile_nav a {
+    clear: left;
+    display: block;
+    padding: 1em 0;
+    transition: 0.3s;
+    text-align: center;
+    font-size: 3rem;
+  }
+
+  .close {
+    float: left;
+  }
 }
+
+@media only screen and (min-width: 770px) {
+  .mobile_nav {
+    display: none;
+  }
+  .open {
+    display: none;
+  }
+
+  .fashion_section {
+    margin-top: 15vw;
+  }
+}
+
+/*@media only screen and (min-width: 1400px) {
+  .document_container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1400px;
+  }
+  
+  .navbar_container {
+    padding: 0 5% 0 0;
+    position: relative;
+    width: 200px;
+    left: 0.6%;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  
+  .navbar a {
+    font-size: 1.5rem;
+    line-height: 3rem;
+  }
+  
+  a.previous,
+  a.next {
+    font-size: 2rem;
+  }
+  
+  a.currentlink {
+    color: #89cff0;
+  }
+  
+  .quote_foundation { 
+    height: auto;
+    margin: auto;
+  }
+  
+  .quote_container {
+    width: 800px;
+    height: 100vh;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .quotefigure img {
+    width: 800px;
+    filter: blur(5px);
+  }
+  
+  .quoteimagecreator {
+    font-size: 0.8rem;
+    padding: 1% 0;
+  }
+  
+  .attribute {
+    color: #89cff0;
+    text-decoration: none;
+    font-size: 0.8rem;
+  }
+  
+  .quotetext_container {
+    position: absolute;
+    width: 720px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+  
+  .quoteheading {
+    font-family: "Bodoni Moda", cursive;
+    font-style: italic;
+    font-size: 2.5rem;
+    color: black;
+    text-align: center;
+    margin-bottom: 5%;
+  }
+  
+  .quoteauthor {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+  }
+  
+  .prevnext_container {
+    position: absolute;
+    width: 750px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .prevnext_container a {
+    text-decoration: none;
+    color: black;
+    font-size: 5rem;
+  }*/

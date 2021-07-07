@@ -9,29 +9,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,700;1,400&family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link rel="stylesheet" href="./Resources/styles.css">
 
     <title>Blue Pink and White</title>
 </head>
 <body>
 
-    <div class="document_container">
+    <div id="wrapper">
+        
         
             
-        <div class = navbar_container>
-            <div class="navbar">
-                <ul>
-                    <li>  
-                         <a class="nav1" href="index.html">quotes</a></li>
-                    <li> <a class="nav2 currentlink" href="fashion.html">fashion</a></li>
-                    <li> <a class="nav3" href="influencers.html">influencers</a></li>
-                    <li> <a class="nav4" href="celebs.html">celebs</a></li>
-                </ul>
-            </div>
-        </div>
+            
         
-        <div class="content_container">
 
+        
+        
+        <!-- <div class="content_container"> -->
+        <div class="flexbox_container">
             <div class="grid_container">
 
                 
@@ -49,7 +45,7 @@
                 </figure>
                 
 
-                <figure class="profile profile2">
+                 <figure class="profile profile2">
                     <img class="profileimage" src="./Resources/Images/Valentts.png" alt="" srcset=""> 
                     <figcaption class="profilename">
                         Valentina Sampaio
@@ -151,16 +147,40 @@
                     <div class="profilelink_container">
                         <a class="profilelink" href="https://www.instagram.com/stavstrashko/" target="_blank">https://www.instagram.com/stavstrashko/</a>
                     </div>
-                </figure>
+                </figure> 
 
                 
 
             </div>
 
-        </div>
+        <!-- </div> -->
     
         
     
+</div>
+
+<div class = "navbar_container">
+    <!-- <div class="navbar"> -->
+        
+        <!-- <div class="mobile_nav" id="mobile_nav">
+            <a href="javascript:void(0)" class="close" onclick="closeNav()">close</a>
+            <a class="nav1" href="#">quotes</a>
+            <a class="nav2 currentlink" href="#">fashion</a>
+            <a class="nav3" href="#">influencers</a>
+            <a class="nav4" href="#">celebs</a>
+        </div>
+        
+        <span id="open" class="open" onclick="openNav()">&#9776</span> -->
+   
+        <ul class="navbar">
+            <li>  
+                 <a class="navlink" href="index.html">quotes</a></li>
+            <li> <a class="navlink currentlink" href="fashion.html">fashion</a></li>
+            <li> <a class="navlink" href="influencers.html">influencers</a></li>
+            <li> <a class="navlink" href="celebs.html">celebs</a></li>
+        </ul>
+    </div>    
+
 </div>
 
 </body>
