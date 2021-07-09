@@ -99,7 +99,7 @@ function getQuote() {
 
 function openNav() {
     document.getElementById('open').style.display = "none";
-    document.getElementById('mobile_nav').style.width = "80vw";
+    document.getElementById('mobile_nav').style.width = "90vw";
 }
 
 function closeNav() {
@@ -111,4 +111,5 @@ function closeNav() {
     document.onload = clickEvent;
     cnt = setInterval(getQuote, 8000);
     
+
     

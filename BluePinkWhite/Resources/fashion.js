@@ -1,1 +1,0 @@
-document.querySelectorAll('a[href="'+document.URL+'"]').forE‌​ach(function(elem){e‌​lem.className += ' current-link')});

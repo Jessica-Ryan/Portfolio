@@ -22,8 +22,16 @@ a {
   font-weight: 700;
 }
 
-ul > li:not(:first-child) > a:hover {
+a:hover {
   color: #ffa6d6;
+}
+
+p,
+.span_source {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  color: white;
+  line-height: 1.5vw;
+  font-size: 1vw;
 }
 
 #wrapper {
@@ -33,10 +41,11 @@ ul > li:not(:first-child) > a:hover {
   margin-right: auto;
 }
 
+/* banner section */
+
 .banner_container {
   width: 70vw;
   height: 10vw;
-  background-color: green;
   top: 0;
   position: fixed;
   z-index: 1;
@@ -46,6 +55,8 @@ ul > li:not(:first-child) > a:hover {
   width: 100%;
   height: 10vw;
   object-fit: fill;
+  /* filter: blur(8px); */
+  filter: contrast(20%);
 }
 
 .quote_container {
@@ -89,6 +100,8 @@ ul > li:not(:first-child) > a:hover {
   }
 }
 
+/* navbar section */
+
 .navbar_container {
   top: 10vw;
   width: 70vw;
@@ -116,8 +129,47 @@ ul > li:not(:first-child) > a:hover {
 }
 
 .previous {
-  padding-left: 10vw;
+  padding-left: 5vw;
 }
+
+/* article section */
+
+.article_figure {
+  float: right;
+  margin: 0 0 1vw 1vw;
+}
+
+.article_image {
+  width: 30vw;
+  height: 20vw;
+}
+
+.article_copy {
+  text-align: justify;
+}
+
+.source {
+  font-style: italic;
+  font-size: 0.9vw;
+}
+
+.article_grid_container {
+  display: grid;
+  grid-template-areas:
+    "heading heading heading"
+    "article article article";
+
+  justify-items: center;
+  gap: 1.5vw;
+}
+
+.article {
+  width: 70vw;
+  justify-content: center;
+  grid-area: article;
+}
+
+/* content sections */
 
 .flexbox_container {
   width: 70vw;
@@ -144,6 +196,9 @@ ul > li:not(:first-child) > a:hover {
 .section_heading {
   font-size: 1.5vw;
   color: #89cff0;
+  margin-top: -285px;
+  padding-top: 295px;
+  display: inline-block;
 }
 
 .profile {
@@ -151,10 +206,8 @@ ul > li:not(:first-child) > a:hover {
   justify-content: center;
 }
 
-img.profileimage {
-  /* width: 20vw; */
+.profileimage {
   width: 100%;
-
   object-fit: cover;
 }
 
@@ -263,7 +316,7 @@ img.profileimage {
   grid-area: profile18;
 }
 
-/* influencers */
+/* youtube video section */
 
 .flex_container {
   margin-top: 15%;
@@ -293,12 +346,49 @@ img.profileimage {
     display: none;
   }
 
+  #wrapper {
+    width: 90vw;
+    height: 100vh;
+  }
+
   .banner_container {
     display: none;
   }
 
-  .fashion_section {
-    margin-top: 1vw;
+  .article {
+    width: 90vw;
+  }
+
+  p,
+  .span_source {
+    line-height: 2.5vw;
+    font-size: 2vw;
+  }
+
+  .source {
+    font-size: 2vw;
+  }
+
+  .article_section {
+    margin-top: 10vw;
+  }
+
+  .article_grid_container {
+    display: grid;
+    grid-template-areas:
+      "heading"
+      "article";
+
+    justify-items: center;
+    gap: 1.5vw;
+  }
+
+  .flexbox_container {
+    width: 90vw;
+  }
+
+  .section_heading {
+    font-size: 2.5vw;
   }
 
   .navbar_container {
@@ -340,7 +430,7 @@ img.profileimage {
   .open {
     top: 0;
     color: white;
-    font-size: 3rem;
+    font-size: 6vw;
     float: left;
     display: block;
     cursor: pointer;
@@ -360,14 +450,10 @@ img.profileimage {
   .mobile_nav a {
     clear: left;
     display: block;
-    padding: 1em 0;
+    padding: 1vw 0;
     transition: 0.3s;
     text-align: center;
-    font-size: 3rem;
-  }
-
-  .close {
-    float: left;
+    font-size: 5vw;
   }
 }
 
@@ -380,113 +466,10 @@ img.profileimage {
   }
 
   .fashion_section {
+    margin-top: 2vw;
+  }
+
+  .article_section {
     margin-top: 15vw;
   }
 }
-
-/*@media only screen and (min-width: 1400px) {
-  .document_container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 1400px;
-  }
-  
-  .navbar_container {
-    padding: 0 5% 0 0;
-    position: relative;
-    width: 200px;
-    left: 0.6%;
-  }
-  
-  .navbar {
-    position: fixed;
-    top: 50%;
-    transform: translate(0, -50%);
-  }
-  
-  .navbar a {
-    font-size: 1.5rem;
-    line-height: 3rem;
-  }
-  
-  a.previous,
-  a.next {
-    font-size: 2rem;
-  }
-  
-  a.currentlink {
-    color: #89cff0;
-  }
-  
-  .quote_foundation { 
-    height: auto;
-    margin: auto;
-  }
-  
-  .quote_container {
-    width: 800px;
-    height: 100vh;
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .quotefigure img {
-    width: 800px;
-    filter: blur(5px);
-  }
-  
-  .quoteimagecreator {
-    font-size: 0.8rem;
-    padding: 1% 0;
-  }
-  
-  .attribute {
-    color: #89cff0;
-    text-decoration: none;
-    font-size: 0.8rem;
-  }
-  
-  .quotetext_container {
-    position: absolute;
-    width: 720px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-  }
-  
-  .quoteheading {
-    font-family: "Bodoni Moda", cursive;
-    font-style: italic;
-    font-size: 2.5rem;
-    color: black;
-    text-align: center;
-    margin-bottom: 5%;
-  }
-  
-  .quoteauthor {
-    font-family: "Montserrat", Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: black;
-    font-size: 1.5rem;
-  }
-  
-  .prevnext_container {
-    position: absolute;
-    width: 750px;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .prevnext_container a {
-    text-decoration: none;
-    color: black;
-    font-size: 5rem;
-  }*/
